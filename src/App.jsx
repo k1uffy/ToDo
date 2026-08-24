@@ -1,6 +1,7 @@
 import './App.scss'
 import Header from "./components/Header.jsx";
 import SearchInput from "./components/SearchInput.jsx";
+import FilterSelect from "./components/FilterSelect.jsx";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <Header/>
         <div className="controls">
             <SearchInput/>
+
         </div>
       </div>
   )
