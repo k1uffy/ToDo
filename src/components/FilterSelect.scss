@@ -1,0 +1,24 @@
+.FilterSelect {
+  min-width: 85px;
+  height: 38px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 10px;
+
+  border-radius: 5px;
+  background: #6C5CE7;
+  border: none;
+
+  font-size: 18px;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.FilterSelect__arrow {
+  transform: translateY(2px);
+}
+
