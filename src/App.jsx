@@ -1,9 +1,14 @@
 import './App.scss'
+import Header from "./components/Header.jsx";
+import SearchInput from "./components/SearchInput.jsx";
 
 function App() {
   return (
       <div className="app">
-          <h1>Список дел на {new Date().toLocaleDateString()} : Ничего</h1>
+        <Header/>
+        <div className="controls">
+            <SearchInput/>
+        </div>
       </div>
   )
 }

@@ -1,0 +1,24 @@
+.SearchInput {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.SearchInput__input {
+  width: 600px;
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid #6C5CE7;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.SearchInput__input:focus {
+  outline: none;
+  border: 2px solid #6C5CE7;
+}
+
+.SearchInput__input::placeholder {
+  font-family: Inter, sans-serif;
+  color: #C3C1E5;
+}

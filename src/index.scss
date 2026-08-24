@@ -1,4 +1,16 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+input, button, select, textarea {
+  font: inherit;
+}
+
 body {
   margin: 0;
   background-color: #F7F7F7;
+  font-family: "Kanit", sans-serif;
 }
+
