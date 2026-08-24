@@ -1,3 +1,5 @@
+@use "../index" as *;
+
 .FilterSelect {
   min-width: 85px;
   height: 38px;
@@ -9,12 +11,18 @@
   padding: 10px 10px;
 
   border-radius: 5px;
-  background: #6C5CE7;
+  background: $color-primary;
   border: none;
 
   font-size: 18px;
   color: #fff;
 
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.FilterSelect:hover {
+  background: $color-primary-hover;
+  box-shadow: 0 0 16px 3px $color-primary-shadow;
   cursor: pointer;
 }
 

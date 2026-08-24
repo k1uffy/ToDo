@@ -1,5 +1,8 @@
+@use "../index" as *;
+
 .SearchInput {
   position: relative;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -7,18 +10,18 @@
   width: 100%;
   height: 38px;
   padding: 0 44px 0 16px;
-  border: 2px solid #6C5CE7;
+  border: 2px solid $color-primary;
   border-radius: 5px;
   font-size: 16px;
 }
 
 .SearchInput__input:focus {
-  outline: 2px solid rgb(108 92 231 / 0.4);
+  outline: 2px solid $color-input-focus;
 }
 
 .SearchInput__input::placeholder {
   font-family: Inter, sans-serif;
-  color: #C3C1E5;
+  color: $color-placeholder;
 }
 
 .SearchInput__icon {

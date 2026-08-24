@@ -1,0 +1,24 @@
+@use "../index" as *;
+
+.ThemeToggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  padding: 8px;
+
+  background: $color-primary;
+
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ThemeToggle:hover {
+  background: $color-primary-hover;
+  box-shadow: 0 0 16px 3px $color-primary-shadow;
+  cursor: pointer;
+}
+
+.ThemeToggle__icon {
+  display: block;
+}

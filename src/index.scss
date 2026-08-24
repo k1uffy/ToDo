@@ -1,3 +1,10 @@
+$color-primary: #6C5CE7;
+$color-primary-hover: #5850DD;
+$color-bg: #F7F7F7;
+$color-placeholder: #C3C1E5;
+$color-primary-shadow: rgba(88, 80, 221, 0.35);
+$color-input-focus: rgba(108, 92, 231, 0.4);
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -10,7 +17,7 @@ input, button, select, textarea {
 
 body {
   margin: 0;
-  background-color: #F7F7F7;
+  background: $color-bg;
   font-family: "Kanit", sans-serif;
 }
 
