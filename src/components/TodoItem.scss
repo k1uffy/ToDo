@@ -1,0 +1,108 @@
+@use "../index" as *;
+
+.TodoItem {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 4px;
+  border-bottom: 1px solid $color-primary;
+}
+
+.TodoItemCheckbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+
+    &:checked {
+      & + .TodoItemCheckbox__box {
+        background-color: $color-primary;
+        border-color: $color-primary-hover;
+
+        &::after {
+          opacity: 1;
+          transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        }
+      }
+    }
+
+    &:focus-visible {
+      & + .TodoItemCheckbox__box {
+        outline: 2px solid $color-primary-hover;
+        outline-offset: 1px;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-right: 17px;
+    background-color: $color-bg;
+    border: 2px solid $color-primary;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      width: 5px;
+      height: 10px;
+      border: solid $color-bg;
+      border-width: 0 2px 2px 0;
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &:hover {
+    .TodoItemCheckbox__box {
+      border-color: $color-primary-hover;
+      box-shadow: 0 0 5px 3px $color-primary-shadow;
+      cursor: pointer;
+    }
+  }
+}
+
+//Кнопки редактирования и удаления
+.NoteActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.EditButton,
+.DeleteButton {
+  width: 18px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
