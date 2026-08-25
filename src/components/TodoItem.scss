@@ -28,7 +28,7 @@
     &:checked {
       & + .TodoItemCheckbox__box {
         background-color: $color-primary;
-        border-color: $color-primary-hover;
+        border-color: $color-primary;
 
         &::after {
           opacity: 1;
@@ -78,8 +78,8 @@
 
   &:hover {
     .TodoItemCheckbox__box {
-      border-color: $color-primary-hover;
-      box-shadow: 0 0 5px 3px $color-primary-shadow;
+      border-color: $color-primary;
+      box-shadow: 0 0 5px 2px $color-primary-shadow;
       cursor: pointer;
     }
   }

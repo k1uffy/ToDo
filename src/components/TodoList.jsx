@@ -5,6 +5,8 @@ function TodoList() {
     return (
         <div className="TodoList">
             <TodoItem />
+            <TodoItem />
+            <TodoItem />
         </div>
     )
 }

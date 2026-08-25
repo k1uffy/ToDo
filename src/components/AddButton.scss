@@ -1,0 +1,33 @@
+@use "../index" as *;
+
+.AddButton {
+  position: sticky;
+  bottom: 32px;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-right: 8px;
+  margin-bottom: 32px;
+  z-index: 10;
+
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $color-primary;
+
+  transition: background 0.2s ease, box-shadow 0.3s ease;
+}
+
+.AddButton:hover {
+  cursor: pointer;
+  background: $color-primary-hover;
+  box-shadow: inset 0 0 0 2px $color-primary, 0 0 5px 2px $color-primary;
+}
+
+.AddButton__icon {
+  display: block;
+}

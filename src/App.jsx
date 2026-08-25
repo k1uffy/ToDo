@@ -4,6 +4,7 @@ import SearchInput from "./components/SearchInput.jsx";
 import FilterSelect from "./components/FilterSelect.jsx";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 import TodoList from "./components/TodoList.jsx";
+import AddButton from "./components/AddButton.jsx";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <ThemeToggle/>
         </div>
        <TodoList/>
+       <AddButton/>
       </div>
   )
 }
