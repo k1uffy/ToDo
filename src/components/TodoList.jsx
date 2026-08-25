@@ -4,9 +4,9 @@ import TodoItem from './TodoItem';
 function TodoList() {
     return (
         <div className="TodoList">
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
+            <TodoItem text="NOTE #1"/>
+            <TodoItem text="NOTE #2"/>
+            <TodoItem text="NOTE #3"/>
         </div>
     )
 }
