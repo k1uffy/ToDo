@@ -1,0 +1,90 @@
+@use "../index" as *;
+
+.Modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.Modal__window {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  height: 289px;
+  width: 100%;
+  padding: 0 30px 0 30px;
+  border-radius: 16px;
+  background-color: $color-bg;
+}
+
+.Modal__title {
+  margin-top: 18px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.Modal__input {
+  margin-top: 25px;
+  width: 100%;
+  height: 38px;
+  border-radius: 5px;
+  border: 2px solid $color-primary;
+  padding: 0 16px 0 16px;
+}
+
+.Modal__input:focus {
+  outline: 2px solid $color-input-focus;
+}
+
+.Modal__input::placeholder {
+  font-family: Inter, sans-serif;
+  color: $color-placeholder;
+}
+
+.Modal__buttons {
+  margin-top: 115px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Modal__cancel {
+  width: 110px;
+  height: 38px;
+  background-color: $color-bg;
+  border: 2px solid $color-primary;
+  border-radius: 5px;
+  color: $color-primary;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.Modal__cancel:hover {
+  background-color: $color-input-focus;
+  color: $color-primary-hover;
+}
+
+.Modal__apply {
+  width: 97px;
+  height: 38px;
+  background-color: $color-primary;
+  color: $color-bg;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.Modal__apply:hover {
+  background-color: $color-primary-hover;
+}

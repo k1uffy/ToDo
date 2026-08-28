@@ -1,8 +1,10 @@
 import "./AddButton.scss"
 
-function AddButton() {
+function AddButton({ OnClick }) {
+
+
     return (
-        <button className="AddButton" type="button">
+        <button className="AddButton" type="button" onClick={OnClick}>
             <img className="AddButton__icon" src="/plus-icon.svg" alt="Add note"/>
         </button>
     )
