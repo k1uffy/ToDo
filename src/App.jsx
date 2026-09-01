@@ -10,6 +10,19 @@ import Modal from "./components/Modal.jsx";
 
 function App() {
     const [isModalOpen, setIsModalOpen] = React.useState(false)
+    const [tasks, setTasks] = React.useState([]);
+
+    const addTask = (text) => {
+        if (text.trim() === "") {
+            return;
+        }
+        const newTask = {
+            id: crypto.randomUUID(),
+            text: text,
+            completed: false,
+        };
+      setTasks([...tasks, newTask]);
+    };
 
     return (
       <div className="App">
@@ -21,7 +34,8 @@ function App() {
         </div>
           <TodoList/>
           <AddButton OnClick={() => setIsModalOpen(true)} />
-          {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
+          {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} onAddTask={addTask}/>}
+          Количество задач: {tasks.length}
       </div>
   )
 }
