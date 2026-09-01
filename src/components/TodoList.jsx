@@ -1,7 +1,7 @@
 import "./TodoList.scss"
 import TodoItem from './TodoItem';
 
-function TodoList( {tasksCollection} ) {
+function TodoList( {tasksCollection, toggleTask, deleteTask, startEditing} ) {
     return (
         <div className="TodoList">
             {tasksCollection.length === 0 && (
@@ -12,7 +12,7 @@ function TodoList( {tasksCollection} ) {
             )}
             {tasksCollection.map((task) => {
                 return (
-                    <TodoItem key={task.id} task={task}/>
+                    <TodoItem key={task.id} task={task} toggleTask={toggleTask} deleteTask={deleteTask} startEditing={startEditing}/>
                 )
             })}
         </div>

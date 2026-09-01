@@ -11,6 +11,18 @@ import Modal from "./components/Modal.jsx";
 function App() {
     const [isModalOpen, setIsModalOpen] = React.useState(false)
     const [tasks, setTasks] = React.useState([]);
+    const [editingTaskId, setEditingTaskId] = React.useState(null)
+
+    const toggleTask = (taskId) => {
+        setTasks(prev => prev.map((task) => {
+            if (task.id === taskId) {
+                return {...task, completed : !task.completed}
+            }
+            else {
+                return task
+            }
+        }));
+    }
 
     const addTask = (text) => {
         if (text.trim() === "") {
@@ -24,6 +36,45 @@ function App() {
       setTasks( prev =>[...prev, newTask]);
     };
 
+    const deleteTask = (taskId) => {
+        setTasks(prev => prev.filter((task) => {
+            return task.id !== taskId;
+        }));
+    };
+
+    const startEditing = (taskId) => {
+        setEditingTaskId(taskId)
+        setIsModalOpen(true)
+    };
+
+    const editingTask = tasks.find((task) => {
+        return task.id === editingTaskId;
+    });
+
+    const handleApply = (text) => {
+        if (editingTaskId === null) {
+            addTask(text);
+        } else {
+            setTasks(prev => prev.map((task) => {
+                if (task.id === editingTaskId) {
+                    return {
+                        ...task,
+                        text: text
+                    };
+                } else {
+                    return task;
+                }
+            }));
+        }
+
+        setEditingTaskId(null);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setEditingTaskId(null);
+    };
+
     return (
       <div className="App">
         <Header/>
@@ -32,9 +83,9 @@ function App() {
             <FilterSelect/>
             <ThemeToggle/>
         </div>
-          <TodoList tasksCollection={tasks}/>
+          <TodoList tasksCollection={tasks} toggleTask={toggleTask} deleteTask={deleteTask} startEditing={startEditing}/>
           <AddButton OnClick={() => setIsModalOpen(true)} />
-          {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} onAddTask={addTask}/>}
+          {isModalOpen && <Modal onClose={handleCloseModal} onAddTask={handleApply} initialText={editingTask ? editingTask.text : ''} title={editingTask ? "EDIT NOTE" : "NEW NOTE"}/>}
       </div>
   )
 }
