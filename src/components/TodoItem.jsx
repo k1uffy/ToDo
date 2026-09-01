@@ -1,12 +1,12 @@
 import "./TodoItem.scss"
 
-function TodoItem({ text }){
+function TodoItem({ task }){
     return (
         <div className="TodoItem">
             <label className="TodoItemCheckbox">
                 <input type="checkbox" className="TodoItemCheckbox__input"/>
                 <span className="TodoItemCheckbox__box"></span>
-                <span className="TodoItemCheckbox__text">{text}</span>
+                <span className="TodoItemCheckbox__text">{task.text}</span>
             </label>
 
             <div className="NoteActions">
@@ -22,4 +22,3 @@ function TodoItem({ text }){
     )
 }
 export default TodoItem;
-

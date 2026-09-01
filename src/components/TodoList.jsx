@@ -1,12 +1,20 @@
 import "./TodoList.scss"
 import TodoItem from './TodoItem';
 
-function TodoList() {
+function TodoList( {tasksCollection} ) {
     return (
         <div className="TodoList">
-            <TodoItem text="NOTE #1"/>
-            <TodoItem text="NOTE #2"/>
-            <TodoItem text="NOTE #3"/>
+            {tasksCollection.length === 0 && (
+                <div className="TodoList__empty">
+                    <img src="/empty.svg" alt="Empty TodoList" />
+                    <p>Empty...</p>
+                </div>
+            )}
+            {tasksCollection.map((task) => {
+                return (
+                    <TodoItem key={task.id} task={task}/>
+                )
+            })}
         </div>
     )
 }

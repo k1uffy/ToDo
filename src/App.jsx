@@ -21,7 +21,7 @@ function App() {
             text: text,
             completed: false,
         };
-      setTasks([...tasks, newTask]);
+      setTasks( prev =>[...prev, newTask]);
     };
 
     return (
@@ -32,10 +32,9 @@ function App() {
             <FilterSelect/>
             <ThemeToggle/>
         </div>
-          <TodoList/>
+          <TodoList tasksCollection={tasks}/>
           <AddButton OnClick={() => setIsModalOpen(true)} />
           {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} onAddTask={addTask}/>}
-          Количество задач: {tasks.length}
       </div>
   )
 }
